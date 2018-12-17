@@ -5,7 +5,11 @@ fos_rest:
 #    routing_loader: true
     view:
         view_response_listener:  true
-#    exception:
+    exception:
+        exception_controller: 'fos_rest.exception.controller:showAction'
+        codes:
+            InvalidArgumentException: 400
+            Doctrine\ORM\EntityNotFoundException: 404
 #        codes:
 #            App\Exception\MyException: 403
 #        messages:
